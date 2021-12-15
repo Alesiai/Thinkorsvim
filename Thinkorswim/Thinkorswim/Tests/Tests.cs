@@ -13,7 +13,7 @@ namespace Thinkorswim.Tests
         {
             string nameOfNewWatchList = StringUtils.GetRandomString(8);
 
-            var expressOrders = new ThinkorswimMainPF(Driver, true)
+            var expressOrders = new ThinkorswimMainPF(Driver)
                 .OpenWatchListPage()
                 .InputNewNameOFWatchList(nameOfNewWatchList)
                 .ClickSaveButton()
@@ -30,7 +30,7 @@ namespace Thinkorswim.Tests
         {
             int betAmount = 100;
 
-            var expressOrders = new ThinkorswimMainPF(Driver, true)
+            var expressOrders = new ThinkorswimMainPF(Driver)
                 .OpenTradePage()
                 .ClickBuyButton()
                 .InputAmountOfBet(betAmount)
@@ -45,7 +45,7 @@ namespace Thinkorswim.Tests
         {
             int betAmount = 10;
 
-            var expressOrders = new ThinkorswimMainPF(Driver, true)
+            var expressOrders = new ThinkorswimMainPF(Driver)
                 .OpenTradePage()
                 .ClickBuyButton()
                 .InputAmountOfBet(betAmount)
@@ -60,7 +60,7 @@ namespace Thinkorswim.Tests
         {
             int betAmount = 20000;
 
-            var expressOrders = new ThinkorswimMainPF(Driver, true)
+            var expressOrders = new ThinkorswimMainPF(Driver)
                 .OpenTradePage()
                 .ClickBuyButton()
                 .InputAmountOfBet(betAmount)
@@ -75,7 +75,7 @@ namespace Thinkorswim.Tests
         {
             int betAmount = 0;
 
-            var expressOrders = new ThinkorswimMainPF(Driver, true)
+            var expressOrders = new ThinkorswimMainPF(Driver)
                 .OpenTradePage()
                 .ClickBuyButton()
                 .InputAmountOfBet(betAmount)
@@ -89,7 +89,7 @@ namespace Thinkorswim.Tests
         {
             float betAmount = 3302.43f;
 
-            var expressOrders = new ThinkorswimMainPF(Driver, true)
+            var expressOrders = new ThinkorswimMainPF(Driver)
                 .OpenAlertPage()
                 .ClickAlertButton()
                 .SumIncerting(betAmount)
@@ -105,7 +105,7 @@ namespace Thinkorswim.Tests
         {
             int betAmount = 100;
 
-            var expressOrders = new ThinkorswimMainPF(Driver, true)
+            var expressOrders = new ThinkorswimMainPF(Driver)
                 .OpenTradePage()
                 .ClickBuyButton()
                 .InputAmountOfBet(betAmount)
@@ -117,7 +117,7 @@ namespace Thinkorswim.Tests
         [Test]
         public void Thinkorswim_CreateFibonacci()
         {
-            var expressOrders = new ThinkorswimMainPF(Driver, true)
+            var expressOrders = new ThinkorswimMainPF(Driver)
                 .OpenChartPage()
                 .ClickPencilButton()
                 .ClickFibonacciButton()
@@ -128,7 +128,7 @@ namespace Thinkorswim.Tests
         [Test]
         public void Thinkorswim_CreateMultyChart()
         {
-            var expressOrders = new ThinkorswimMainPF(Driver, true)
+            var expressOrders = new ThinkorswimMainPF(Driver)
                 .OpenFullChartPage()
                 .ClickStudiesButton()
                 .ClickADXButton()
@@ -140,7 +140,7 @@ namespace Thinkorswim.Tests
         [Test]
         public void Thinkorswim_CreateOrderWitnVerticalOption()
         {
-            var expressOrders = new ThinkorswimMainPF(Driver, true)
+            var expressOrders = new ThinkorswimMainPF(Driver)
                 .OpenTradePage()
                 .ClickVerticalButton()
                 .ClickReviewButton()

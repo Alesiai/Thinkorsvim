@@ -99,7 +99,7 @@ namespace Thinkorswim.Tests.Pages
         {
             _orderRuleButton.Click();
 
-            Log.Info("0 changed to 1");
+            Log.Info("Clicked to order rule");
             return this;
         }
 

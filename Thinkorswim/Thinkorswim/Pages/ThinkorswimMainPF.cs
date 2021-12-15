@@ -26,15 +26,12 @@ namespace Thinkorswim.Tests.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id=\"root\"]/div/main/nav/div/div[3]/button")]
         private IWebElement _chartButton;
 
-        public ThinkorswimMainPF(IWebDriver driver,bool IsFirst) : base(driver) 
+        public ThinkorswimMainPF(IWebDriver driver) : base(driver)
         {
             _UserName.SendKeys("alesiai3");
             _UserPassword.SendKeys("ve4nostp");
             _CobfirmBtn.Click();
         }
-        public ThinkorswimMainPF(IWebDriver driver) : base(driver)
-        { }
-
 
         public TradePF OpenTradePage()
         {
@@ -58,7 +55,7 @@ namespace Thinkorswim.Tests.Pages
         {
             _tradeButton.Click();
 
-            Log.Info("Clicked on trade button");
+            Log.Info("Clicked on alert button");
 
             return new AlertPF(Driver);
         }
@@ -67,7 +64,7 @@ namespace Thinkorswim.Tests.Pages
         {
             _tradeButton.Click();
 
-            Log.Info("Clicked on trade button");
+            Log.Info("Clicked on chart button");
 
             return new ChartPF(Driver);
         }
@@ -76,7 +73,7 @@ namespace Thinkorswim.Tests.Pages
         {
             _chartButton.Click();
 
-            Log.Info("Clicked on chart button");
+            Log.Info("Clicked on full chart button");
 
             return new ChartPF(Driver);
         }
