@@ -20,18 +20,14 @@ namespace Thinkorswim.Tests.Pages
         [FindsBy(How = How.ClassName, Using = "dropdown-index__0")]
         private IWebElement _choseSympol;
 
-
-
         [FindsBy(How = How.XPath, Using = "//*[@id=\"quote-details\"]/div[1]/header/div/div[3]/div/button")]
         private IWebElement _addToWatchListButton;
 
-        [FindsBy(How = How.CssSelector, Using = "div.control__value.value.value--several-items > div > input")]
-        private IWebElement _amountOfBetInput;
+        [FindsBy(How = How.CssSelector, Using = "#watchlist-row-0>td:nth-child(1)>div>div>span[data-symbol=\"DY\"]")]
+        private IWebElement _findDYinWatchList;
 
-        
         public WatchListPF(IWebDriver driver) : base(driver) { }
-        
-        
+
         public WatchListPF InputNewNameOFWatchList(string newName)
         {
             _nameOfNewWatchList.SendKeys(newName.ToString());
@@ -72,12 +68,15 @@ namespace Thinkorswim.Tests.Pages
             return this;
         }
 
-        public WatchListPF watchList(string nameOfList)
-        {   
-            By _current = By.CssSelector("span[title='"+ nameOfList + "']");
+        
 
-            Driver.FindElement(_current).Click();
-            return this;
+        public (IWebElement Current, IWebElement FindElement) watchList(string nameOfList)
+        {
+            By _current = By.CssSelector("span[title='" + nameOfList + "']");
+            var current = Driver.FindElement(_current);
+            current.Click();
+
+            return (current, _findDYinWatchList);
         }
     }
 }

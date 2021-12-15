@@ -24,8 +24,8 @@ namespace Thinkorswim.Tests.Utils
         [TearDown]
         public void CloseBrowser()
         {
-            //Log.Info($"Close test: {TestContext.CurrentContext.Test.MethodName}");
-            //DriverSingleton.CloseWebDriver();
+            Log.Info($"Close test: {TestContext.CurrentContext.Test.MethodName}");
+            DriverSingleton.CloseWebDriver();
         }
     }
 }

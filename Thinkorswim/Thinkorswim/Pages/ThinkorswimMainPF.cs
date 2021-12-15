@@ -23,7 +23,8 @@ namespace Thinkorswim.Tests.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id=\"watchlist-header\"]/div[2]/div[2]/button")]
         private IWebElement _watchListButton;
 
-
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"root\"]/div/main/nav/div/div[3]/button")]
+        private IWebElement _chartButton;
 
         public ThinkorswimMainPF(IWebDriver driver,bool IsFirst) : base(driver) 
         {
@@ -53,67 +54,31 @@ namespace Thinkorswim.Tests.Pages
             return new WatchListPF(Driver);
         }
 
-        //public ExpressOrderMenuPF OpenExpressOrderMenu()
-        //{
-        //    _expressOrderButton.Click();
+        public AlertPF OpenAlertPage()
+        {
+            _tradeButton.Click();
 
-        //    Log.Info("Clicked on express order button");
+            Log.Info("Clicked on trade button");
 
-        //    return new ExpressOrderMenuPF(Driver);
-        //}
+            return new AlertPF(Driver);
+        }
 
-        //public PendingTradePF OpenPendingTradeMenu()
-        //{
-        //    _pendingTradeButton.Click();
+        public ChartPF OpenChartPage()
+        {
+            _tradeButton.Click();
 
-        //    Log.Info("Clicked on pending trade button");
+            Log.Info("Clicked on trade button");
 
-        //    return new PendingTradePF(Driver);
-        //}
+            return new ChartPF(Driver);
+        }
 
-        //public AssetsPF OpenAssets()
-        //{
-        //    _selectedAssetButton.Click();
+        public ChartPF OpenFullChartPage()
+        {
+            _chartButton.Click();
 
-        //    Log.Info("Click on assets menu button");
+            Log.Info("Clicked on chart button");
 
-        //    return new AssetsPF(Driver);
-        //}
-
-        //public ChartTypeMenuPF OpenChartTypeMenu()
-        //{
-        //    _chartTypeMenuButton.Click();
-
-        //    Log.Info("Chart type menu opened");
-
-        //    return new ChartTypeMenuPF(Driver);
-        //}
-
-        //public MultiChartMenuPF OpenMulChartMenu()
-        //{
-        //    _multiChartMenuButton.Click();
-
-        //    Log.Info("Multi-chart menu opened");
-
-        //    return new MultiChartMenuPF(Driver);
-        //}
-
-        //public DrawingsMenuPF OpenDrawingsMenu()
-        //{
-        //    _drawingsMenuButton.Click();
-
-        //    Log.Info("Drawings menu opened");
-
-        //    return new DrawingsMenuPF(Driver);
-        //}
-
-        //public ChatMenuPF OpenChatMenu()
-        //{
-        //    _chatMenuButton.Click();
-
-        //    Log.Info("Chat menu opened");
-
-        //    return new ChatMenuPF(Driver);
-        //}
+            return new ChartPF(Driver);
+        }
     }
 }
