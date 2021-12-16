@@ -22,7 +22,7 @@ namespace Thinkorswim.Tests
                 .AddToWatchlistButton()
               .watchList(nameOfNewWatchList);
 
-            expressOrders.FindElement.Text.Should().Be("DY");
+            expressOrders.FindElement.Text.Should().Be("DI");
             expressOrders.Current.Should().NotBeNull();
         }
         [Test]
