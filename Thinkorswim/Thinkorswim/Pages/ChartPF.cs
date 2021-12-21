@@ -1,9 +1,7 @@
-﻿using System.Threading;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using Thinkorswim.Tests.Utils;
-using Thinkorswim.Tests.Pages;
 
 namespace Thinkorswim.Tests.Pages
 { 

@@ -3,7 +3,6 @@ using Serilog;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System.Linq;
-using System.Xml.Serialization;
 
 namespace Thinkorswim.Tests.Utils
 {

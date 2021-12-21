@@ -2,7 +2,6 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using Thinkorswim.Tests.Driver;
-using SeleniumExtras.PageObjects;
 
 namespace Thinkorswim.Tests.Utils
 {
