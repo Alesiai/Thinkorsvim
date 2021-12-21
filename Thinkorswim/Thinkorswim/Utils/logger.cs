@@ -44,6 +44,8 @@ namespace Thinkorswim.Tests.Utils
 
                         screenshot.SaveAsFile(fileName);
                     }
+
+                    Info("FAILED");
                 }
                 catch { }
             }
