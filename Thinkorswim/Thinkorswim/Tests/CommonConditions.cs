@@ -17,7 +17,6 @@ namespace Thinkorswim.Tests.Utils
             Log.Info($"Start test: {TestContext.CurrentContext.Test.MethodName}");
             Driver = DriverSingleton.GetWebDriver();
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            Driver.Manage().Window.Maximize();
             Driver.Navigate().GoToUrl("https://trade.thinkorswim.com/");
         }
 
