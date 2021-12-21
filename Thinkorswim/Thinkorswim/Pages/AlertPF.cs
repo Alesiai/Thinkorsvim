@@ -9,22 +9,19 @@ namespace Thinkorswim.Tests.Pages
 {
     public class AlertPF : PageFactoryBase
     {
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/main/div[2]/div[1]/section/div[1]/header/div/div[3]/button")]
-        private IWebElement _alertButton;
-
         [FindsBy(How = How.XPath, Using = "//*[@id=\"undefined input\"]")]
         private IWebElement _sumInput;
 
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/main/div[2]/div[1]/section/div[1]/header/div/div[2]/div[2]/div[2]/div/button")]
+        private By _notification = By.XPath("/html/body/div[1]/div/div");
+
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"quote-details\"]/div[1]/header/div/div[3]/button")]
+        private IWebElement _alertButton;
+
+        [FindsBy(How = How.CssSelector, Using = "button[data-testid=\"operator-dropdown-value\"]")]
         private IWebElement _atOrAboveButton;
 
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/main/div[2]/div[1]/section/div[1]/header/div/div[2]/div[2]/div[2]/div/div/div/div/div/div/div/ul/li[3]")]
+        [FindsBy(How = How.CssSelector, Using = "#tippy-8>div>div>div>div>div>ul>li:nth-child(3)")]
         private IWebElement _aboveButton;
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/main/div[2]/div[1]/section/div[1]/header/div/div[2]/div[3]/button[2]")]
-        private IWebElement _submitButton;
-
-        private By _notification = By.XPath("/html/body/div[1]/div/div");
 
         public AlertPF(IWebDriver driver) : base(driver) { }
 
@@ -66,8 +63,6 @@ namespace Thinkorswim.Tests.Pages
 
         public AlertPF SubmitClick()
         {
-            _submitButton.Click();
-
             Log.Info("Clicked to submit button");
             
             return this;

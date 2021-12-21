@@ -16,14 +16,13 @@ namespace Thinkorswim.Tests.Pages
         [FindsBy(How = How.XPath, Using = "//*[@id=\"accept\"]")]
         private IWebElement _CobfirmBtn;
         #endregion
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"root\"]/div/main/nav/div/div[2]/button")]
+        [FindsBy(How = How.CssSelector, Using = "button[data-testid=\"trade-page-button\"]")]
         private IWebElement _tradeButton;
 
         [FindsBy(How = How.XPath, Using = "//*[@id=\"watchlist-header\"]/div[2]/div[2]/button")]
         private IWebElement _watchListButton;
 
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"root\"]/div/main/nav/div/div[3]/button")]
+        [FindsBy(How = How.CssSelector, Using = "button[data-testid=\"charts-page-button\"]")]
         private IWebElement _chartButton;
 
         public ThinkorswimMainPF(IWebDriver driver) : base(driver) { LogIn(); }

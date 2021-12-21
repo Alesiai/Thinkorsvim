@@ -48,5 +48,10 @@ namespace Thinkorswim.Tests.Utils
                 catch { }
             }
         }
+
+        public static void LogStat(NUnit.Framework.Interfaces.ITestResult result)
+        {
+            
+        }
     }
 }

@@ -8,11 +8,11 @@ using Thinkorswim.Tests.Utils;
 namespace Thinkorswim.Tests.Pages
 {
     public class TradePF : PageFactoryBase
-    {
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/main/div[2]/div[1]/section/div[2]/div[2]/div[4]/button")]
+    { 
+        [FindsBy(How = How.CssSelector, Using = "button[data-testid=\"TradeButton-buy\"]")]
         private IWebElement _buyButton;
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"tradeTicket-0\"]/div[1]/input")]
+        
+        [FindsBy(How = How.CssSelector, Using = "input[aria-label=\"Quantity Input\"]")]
         private IWebElement _buyInput;
 
         [FindsBy(How = How.CssSelector, Using = "button[id=\"review-order-button\"]")]
@@ -23,13 +23,10 @@ namespace Thinkorswim.Tests.Pages
 
         [FindsBy(How = How.CssSelector, Using = "button[aria-label=\"Add Order Rule\"]")]
         private IWebElement _orderRuleButton;
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/main/div[2]/div[3]/section/section/section[2]/button[2]")]
-        private IWebElement _editButton;
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"trade-table\"]/div[3]/table/tfoot/tr[2]/td[1]/div/span[2]/button")]
+        
+        [FindsBy(How = How.CssSelector, Using = "button[aria-label=\"Add Vertical\"]")]
         private IWebElement _verticalButton;
-
+        
         private readonly By _expressOrders = By.ClassName("trade-row");
         private By _notification = By.XPath("//*[@id=\"root\"]/div/div");
 
@@ -69,14 +66,7 @@ namespace Thinkorswim.Tests.Pages
             Log.Info("Clicked vertical button");
             return this;
         }
-        public TradePF ClickEditButton()
-        {
-            _editButton.Click();
-
-            Log.Info("Clicked edit button");
-            return this;
-        }
-
+        
         public TradePF ClickSendButton()
         {
             Thread.Sleep(2000);

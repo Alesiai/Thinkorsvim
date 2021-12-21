@@ -6,10 +6,10 @@ namespace Thinkorswim.Tests.Pages
 {
     public class WatchListPF : PageFactoryBase
     {
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"watchlist-header\"]/div[2]/div[2]/div/form/input")]
+        [FindsBy(How = How.CssSelector, Using = "input[placeholder=\"Watchlist name\"]")]
         private IWebElement _nameOfNewWatchList;
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"watchlist-header\"]/div[2]/div[2]/div/form/button")]
+        
+        [FindsBy(How = How.CssSelector, Using = "button[data-testid=\"watchlist-save-button\"]")]
         private IWebElement _saveButton;
 
         [FindsBy(How = How.XPath, Using = "//*[@id=\"symbol-search\"]")]
@@ -17,11 +17,11 @@ namespace Thinkorswim.Tests.Pages
 
         [FindsBy(How = How.ClassName, Using = "dropdown-index__0")]
         private IWebElement _choseSympol;
-
-        [FindsBy(How = How.XPath, Using = "//*[@id=\"quote-details\"]/div[1]/header/div/div[3]/div/button")]
+        
+        [FindsBy(How = How.CssSelector, Using = "button[data-testid=\"add-symbol-to-watchlist-dropdown-value\"]")]
         private IWebElement _addToWatchListButton;
 
-        [FindsBy(How = How.CssSelector, Using = "#watchlist-row-0>td:nth-child(1)>div>div>span[data-symbol=\"DY\"]")]
+        [FindsBy(How = How.CssSelector, Using = "span[data-symbol=\"DY\"]")]
         private IWebElement _findDYinWatchList;
 
         public WatchListPF(IWebDriver driver) : base(driver) { }

@@ -6,23 +6,23 @@ using Thinkorswim.Tests.Utils;
 namespace Thinkorswim.Tests.Pages
 { 
     public class ChartPF : PageFactoryBase
-    {//*
+    {
         [FindsBy(How = How.CssSelector, Using = "button[data-testid=\"drawings-menu-button\"]")]
         private IWebElement _pencilButton;
 
         [FindsBy(How = How.CssSelector, Using = "button[data-testid=\"studys-table-customization-button\"]")]
         private IWebElement _studiesButton;
 
-        [FindsBy(How = How.XPath, Using = "html/body/div[1]/div/main/div[2]/section/div/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[5]/div[2]/div/div[2]/button[4]")]
+        [FindsBy(How = How.CssSelector, Using = "button[class=\"Button__SystemButton-lnusJv Button-jyKNMA OverlayContainerItem-bdKXZq fMbxLf\"]")]
         private IWebElement _fibonacciButton;
 
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/main/div[2]/section/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[3]/div/div[2]/div/div/button[1]")]
+        [FindsBy(How = How.CssSelector, Using = "button[role=\"option\"]")]
         private IWebElement _ADXButton;
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/div/main/div[2]/section/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[3]/button")]
+       
+        [FindsBy(How = How.CssSelector, Using = "button[data-testid=\"overlay-container-close\"]")]
         private IWebElement _closeButton;
-
-        private By _chart = By.XPath("//*[@id=\"charts-wrapper\"]/div[2]/div[1]/div/div[5]/div[5]");
+       
+        private By _chart = By.ClassName("d3chart-container");
 
         public ChartPF(IWebDriver driver) : base(driver) { }
 
